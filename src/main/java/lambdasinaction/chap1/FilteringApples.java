@@ -7,6 +7,7 @@ public class FilteringApples{
 
     public static void main(String ... args){
 
+        // 苹果库存
         List<Apple> inventory = Arrays.asList(new Apple(80,"green"),
                                               new Apple(155, "green"),
                                               new Apple(120, "red"));	
@@ -33,6 +34,7 @@ public class FilteringApples{
         System.out.println(weirdApples);
     }
 
+    // java8之前的写法，返回绿色的苹果
     public static List<Apple> filterGreenApples(List<Apple> inventory){
         List<Apple> result = new ArrayList<>();
         for (Apple apple: inventory){
@@ -42,7 +44,7 @@ public class FilteringApples{
         }
         return result;
     }
-
+    // java8之前的写法，返回150g以上的苹果
     public static List<Apple> filterHeavyApples(List<Apple> inventory){
         List<Apple> result = new ArrayList<>();
         for (Apple apple: inventory){
@@ -53,14 +55,18 @@ public class FilteringApples{
         return result;
     }
 
-    public static boolean isGreenApple(Apple apple) {
-        return "green".equals(apple.getColor()); 
-    }
+    /********************************* java8 前后写法分割线 ****************************************/
 
+    // 方法（代码）作为参数
+    public static boolean isGreenApple(Apple apple) {
+        return "green".equals(apple.getColor());
+    }
+    // 方法（代码）作为参数
     public static boolean isHeavyApple(Apple apple) {
         return apple.getWeight() > 150;
     }
 
+    // Predicate是java8中的function包中的接口
     public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p){
         List<Apple> result = new ArrayList<>();
         for(Apple apple : inventory){
@@ -69,8 +75,9 @@ public class FilteringApples{
             }
         }
         return result;
-    }       
+    }
 
+    // 苹果实体类
     public static class Apple {
         private int weight = 0;
         private String color = "";

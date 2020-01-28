@@ -12,23 +12,23 @@ public class FilteringApples{
                                               new Apple(155, "green"),
                                               new Apple(120, "red"));	
 
-        // [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
+        // 使用方法引用（传递代码）
         List<Apple> greenApples = filterApples(inventory, FilteringApples::isGreenApple);
         System.out.println(greenApples);
-        
-        // [Apple{color='green', weight=155}]
+
+        // 使用方法引用（传递代码）
         List<Apple> heavyApples = filterApples(inventory, FilteringApples::isHeavyApple);
         System.out.println(heavyApples);
         
-        // [Apple{color='green', weight=80}, Apple{color='green', weight=155}]
+        // lambda写法，代替定义方法（方法引用）
         List<Apple> greenApples2 = filterApples(inventory, (Apple a) -> "green".equals(a.getColor()));
         System.out.println(greenApples2);
         
-        // [Apple{color='green', weight=155}]
+        // lambda写法，代替定义方法（方法引用）
         List<Apple> heavyApples2 = filterApples(inventory, (Apple a) -> a.getWeight() > 150);
         System.out.println(heavyApples2);
         
-        // []
+        // lambda写法，代替定义方法
         List<Apple> weirdApples = filterApples(inventory, (Apple a) -> a.getWeight() < 80 || 
                                                                        "brown".equals(a.getColor()));
         System.out.println(weirdApples);
@@ -57,16 +57,16 @@ public class FilteringApples{
 
     /********************************* java8 前后写法分割线 ****************************************/
 
-    // 方法（代码）作为参数
+    // 定义方法引用（代码作为参数）
     public static boolean isGreenApple(Apple apple) {
         return "green".equals(apple.getColor());
     }
-    // 方法（代码）作为参数
+    // 定义方法引用（代码作为参数）
     public static boolean isHeavyApple(Apple apple) {
         return apple.getWeight() > 150;
     }
 
-    // Predicate是java8中的function包中的接口
+    // 通用的筛选方法，Predicate是java8中的function包中的接口
     public static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p){
         List<Apple> result = new ArrayList<>();
         for(Apple apple : inventory){

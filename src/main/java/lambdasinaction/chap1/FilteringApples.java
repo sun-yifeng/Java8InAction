@@ -55,8 +55,6 @@ public class FilteringApples{
         return result;
     }
 
-    /********************************* java8 前后写法分割线 ****************************************/
-
     // 定义方法引用（代码作为参数）
     public static boolean isGreenApple(Apple apple) {
         return "green".equals(apple.getColor());

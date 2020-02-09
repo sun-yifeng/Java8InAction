@@ -1,5 +1,9 @@
 package lambdasinaction.chap2;
 
+/**
+ * 匿名类谜题
+ * 返回结果是5，因为this指向Runnable()
+ * */
 public class MeaningOfThis
 {
 	public final int value = 4;

@@ -1,6 +1,9 @@
 package lambdasinaction.chap4;
 import java.util.*;
 
+/**
+ * 菜肴
+ * */
 public class Dish {
 
     private final String name;

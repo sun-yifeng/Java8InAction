@@ -18,22 +18,27 @@ public class Dish {
         this.type = type;
     }
 
+    /** 菜称 */
     public String getName() {
         return name;
     }
 
+    /** 是否为蔬菜 */
     public boolean isVegetarian() {
         return vegetarian;
     }
 
+    /** 热量 */
     public int getCalories() {
         return calories;
     }
 
+    /** 类型 */
     public Type getType() {
         return type;
     }
 
+    /** 肉、鱼、其他 */
     public enum Type { MEAT, FISH, OTHER }
 
     @Override
@@ -41,6 +46,7 @@ public class Dish {
         return name;
     }
 
+    // 菜单（集合）
     public static final List<Dish> menu =
             Arrays.asList( new Dish("pork", false, 800, Dish.Type.MEAT),
                            new Dish("beef", false, 700, Dish.Type.MEAT),

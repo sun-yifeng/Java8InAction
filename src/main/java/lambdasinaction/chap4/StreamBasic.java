@@ -11,8 +11,16 @@ import static lambdasinaction.chap4.Dish.menu;
 /**
  *
  *  java7和java8对集合处理的不同
+ *  需求：从菜单中筛选出低热量（小于400卡）的菜单，并且排序，打印出菜单名称
  *  第一种方案：用java7操作集合
  *  第二种方案：用java8操作集合
+ *
+ *  流操作包括三件事：
+ *  1、数据源（如集合）
+ *  2、中间操作（filter,map,limit,sorted,distinct）
+ *  3、终端操作（forEach,count,collect）
+ *
+ *  流的定义：操作（流方法）数据源（集合、数字，IO）生成元素序列（集合）
  *
  * */
 public class StreamBasic {
@@ -20,12 +28,14 @@ public class StreamBasic {
     public static void main(String...args){
 
         // Java 7
+        System.out.println("----------------java7 开始-----------------");
         getLowCaloricDishesNamesInJava7(Dish.menu).forEach(System.out::println);
-
-        System.out.println("---");
+        System.out.println("----------------java7 结束-----------------");
 
         // Java 8
+        System.out.println("----------------java8 开始-----------------");
         getLowCaloricDishesNamesInJava8(Dish.menu).forEach(System.out::println);
+        System.out.println("----------------java8 结束-----------------");
 
     }
 

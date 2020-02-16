@@ -1,4 +1,9 @@
 package lambdasinaction.chap5;
+
+/**
+ * 5.5.1 交易员
+ *
+ * */
 public  class Trader{
 	
 	private String name;

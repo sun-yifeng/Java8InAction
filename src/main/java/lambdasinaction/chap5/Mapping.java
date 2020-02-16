@@ -50,6 +50,7 @@ public class Mapping{
                         .flatMap(i -> numbers2.stream()
                                               .map(j -> new int[]{i, j})
                                  )
+                                // 返回能被3整除的数对
                                 //.filter(pair -> (pair[0] + pair[1]) % 3 == 0)
                                 .collect(toList());
         pairs.forEach(pair -> System.out.println("(" + pair[0] + ", " + pair[1] + ")"));

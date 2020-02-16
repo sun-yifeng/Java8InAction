@@ -1,16 +1,21 @@
 package lambdasinaction.chap5;
 
-public class Transaction{
+/**
+ * 5.5.1 交易和交易员
+ *
+ * */
+public class TraderTransaction {
 
 	private Trader trader;
 	private int year;
 	private int value;
 
-	public Transaction(Trader trader, int year, int value)
+	// 交易
+	public TraderTransaction(Trader trader, int year, int value)
 	{
-		this.trader = trader;
-		this.year = year;
-		this.value = value;
+		this.trader = trader; // 交易员
+		this.year = year;     // 年份
+		this.value = value;   // 交易额
 	}
 
 	public Trader getTrader(){ 

@@ -9,10 +9,9 @@ import java.nio.file.*;
 /**
  * 5.7 构建流
  * 5.7.1 由值创建流
- *
- *
- *
- *
+ * 5.7.2 数组创建流
+ * 5.7.3 文件构建流
+ * 5.7.4 iterate 函数创建无线流
  * */
 public class BuildingStreams {
 

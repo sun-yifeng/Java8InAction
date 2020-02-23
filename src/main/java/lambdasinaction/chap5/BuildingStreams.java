@@ -83,9 +83,6 @@ public class BuildingStreams {
                   }
               };
         IntStream.generate(fib).limit(10).forEach(System.out::println);
-
-
-
         System.out.println("There are " + uniqueWords + " unique words in data.txt");
 
 

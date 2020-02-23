@@ -9,6 +9,7 @@ import static lambdasinaction.chap4.Dish.menu;
 
 /**
  * 5.1 筛选和切片
+ * filter()/distinct()/limit()/skip()
  * */
 public class Filtering{
 

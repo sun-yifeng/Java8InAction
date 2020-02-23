@@ -7,7 +7,7 @@ import static java.util.stream.Collectors.toList;
 import static lambdasinaction.chap4.Dish.menu;
 
 /**
- * 5.2 映射
+ * 5.2 映射,流支持map方法，接受一个函数作为参数，这个函数会用到每一个元素上。
  *  map()：映射
  *  flatMap():把流中的每一个值都转换为一个流，然后把所有的流连接起来成一个流
  * */

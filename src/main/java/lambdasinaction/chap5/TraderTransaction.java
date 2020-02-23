@@ -2,7 +2,7 @@ package lambdasinaction.chap5;
 
 /**
  * 5.5.1 交易和交易员
- *
+ * 结合 TraderPractice
  * */
 public class TraderTransaction {
 

@@ -6,6 +6,7 @@ import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
 /**
+ * 5.5 付诸实践
  * 查询1： 找出2011年发生的交易，并且按照交易额排序；
  * 查询2： 交易员都在哪些不同的城市工作过；
  * 查询3： 查询所有来自剑桥的交易员，并且按照姓名排序；
@@ -102,11 +103,10 @@ public class TraderPractice {
                         .reduce(0, Integer::max);
         System.out.println(highestValue);
 
-        /*
+        /* 代码清单5-8 找出最小的交易
         Optional<TraderTransaction> smallestTransaction =
                 transactions.stream()
-                .reduce((t1, t2)) ->
-                         t1.getValue() < t2.getValue() ? t1 : t2);
+                            .reduce((t1, t2)) -> t1.getValue() < t2.getValue() ? t1 : t2);
 
          */
 

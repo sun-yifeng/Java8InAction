@@ -1,0 +1,19 @@
+第4章
+表5-1 中间操作终端操作
+
+第5章
+5.1 Filtering 筛选和切片
+    filter(),distinct(),limit(),skip()
+5.2 Mapping 映射
+    map()：
+    flatMap():把流中的每一个值都转换为一个流，然后把所有的流连接起来成一个流
+5.3 Finding 查找和匹配
+    5.3.1 anyMatch()
+    5.3.2 allMatch(), noneMatch()
+    5.3.3 findAny() 无参数，可以结合filter和findAny来实现查询；
+    5.3.4 findFirst() 查找第一个元素
+5.4 Reducing 归约 堆叠计算，省略for语句
+   reduce 方法有两个参数
+   1）初始值
+   2）所有元素在一起的操作，比如+
+5.5 付诸实践

@@ -1,5 +1,0 @@
-第5章
-5.1 Filtering 筛选和切片
-5.2 Mapping 映射
-5.3 Finding 查找
-5.4 Reducing 归约

@@ -7,7 +7,7 @@ import java.util.*;
 import static lambdasinaction.chap4.Dish.menu;
 
 /**
- * 5.4 归约
+ * 5.4 归约 堆叠计算，省略for语句
  *  reduce 方法有两个参数
  *  1）初始值
  *  2）所有元素在一起的操作，比如+

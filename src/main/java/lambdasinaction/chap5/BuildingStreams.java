@@ -6,37 +6,56 @@ import java.util.stream.*;
 import java.nio.charset.Charset;
 import java.nio.file.*;
 
+/**
+ * 5.7 构建流
+ * 5.7.1 由值创建流
+ *
+ *
+ *
+ *
+ * */
 public class BuildingStreams {
 
     public static void main(String...args) throws Exception{
         
-        // Stream.of
+        // 5.7.1 字符串创建流
+        System.out.println("---------------------------------- 1.由值创建流 ------------------------------------");
         Stream<String> stream = Stream.of("Java 8", "Lambdas", "In", "Action");
         stream.map(String::toUpperCase).forEach(System.out::println);
 
-        // Stream.empty
+        // 创建空流
         Stream<String> emptyStream = Stream.empty();
 
-        // Arrays.stream
+        // 5.7.2 数组创建流
+        System.out.println("---------------------------------- 2.数组创建流 ------------------------------------");
         int[] numbers = {2, 3, 5, 7, 11, 13};
-        System.out.println(Arrays.stream(numbers).sum());
+        System.out.println("求和：" + Arrays.stream(numbers).sum());
 
-        // Stream.iterate
+        // 5.7.3 文件构建流
+        System.out.println("---------------------------------- 3.文件创建流 ------------------------------------");
+        long uniqueWords = Files.lines(Paths.get("./target/classes/lambdasinaction/chap5/data.txt"), Charset.defaultCharset())
+                .flatMap(line -> Arrays.stream(line.split(" ")))
+                .distinct()
+                .count();
+
+        // 5.7.4 iterate 函数创建无线流
+        System.out.println("---------------------------------- 4.文件创建流 ------------------------------------");
         Stream.iterate(0, n -> n + 2)
               .limit(10)
               .forEach(System.out::println);
 
-        // fibonnaci with iterate
+        // 5.7.4 iterate 函数创建无线流，斐波那契数，0,1开始，后面数是前面的两个数之和
+        System.out.println("---------------------------------- 4.斐波那契元组数列 --------------------------------");
         Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1],t[0] + t[1]})
               .limit(10)
               .forEach(t -> System.out.println("(" + t[0] + ", " + t[1] + ")"));
         
         Stream.iterate(new int[]{0, 1}, t -> new int[]{t[1],t[0] + t[1]})
               .limit(10)
-              . map(t -> t[0])  
+              .map(t -> t[0])
               .forEach(System.out::println);
 
-        // random stream of doubles with Stream.generate
+        // 5.7.4 generate 函数创建无线流
         Stream.generate(Math::random)
               .limit(10)
               .forEach(System.out::println);
@@ -45,15 +64,15 @@ public class BuildingStreams {
         IntStream.generate(() -> 1)
                  .limit(5)
                  .forEach(System.out::println);
-
+        // IntSupplier接口，匿名类（有状态）
         IntStream.generate(new IntSupplier(){
             public int getAsInt(){
                 return 2;
             }
         }).limit(5)
           .forEach(System.out::println);
-   
 
+        // IntSupplier接口，匿名类（有状态）
         IntSupplier fib = new IntSupplier(){
                   private int previous = 0;
                   private int current = 1;
@@ -64,14 +83,11 @@ public class BuildingStreams {
                       return this.previous;
                   }
               };
-         IntStream.generate(fib).limit(10).forEach(System.out::println);
+        IntStream.generate(fib).limit(10).forEach(System.out::println);
 
-         long uniqueWords = Files.lines(Paths.get("lambdasinaction/chap5/data.txt"), Charset.defaultCharset())
-                                 .flatMap(line -> Arrays.stream(line.split(" ")))
-                                 .distinct()
-                                 .count();
 
-         System.out.println("There are " + uniqueWords + " unique words in data.txt");
+
+        System.out.println("There are " + uniqueWords + " unique words in data.txt");
 
 
     }

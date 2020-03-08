@@ -48,7 +48,7 @@
                 </configuration>
 
             </plugin>
-           <!-- 找不到此插件，先注释掉
+           <!-- 找不到此插件，先注释掉，作用：将依赖的jar包打包到当前jar包, 依赖的jar包进行重命名 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>

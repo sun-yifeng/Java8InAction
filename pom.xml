@@ -33,7 +33,28 @@
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.31</version>
+        </dependency>
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>mvnrepository</id>
+            <name>mvnrepository</name>
+            <url>http://www.mvnrepository.com/</url>
+            <layout>default</layout>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <build>
         <plugins>
@@ -41,14 +62,14 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.1</version>
-                <!-- jdk11可以编译通过，本机idea最多支持11，jdk最高版本为13 -->
+                <!-- jdk11可以编译通过 -->
                 <configuration>
                     <source>11</source>
                     <target>11</target>
                 </configuration>
 
             </plugin>
-           <!-- 找不到此插件，先注释掉，作用：将依赖的jar包打包到当前jar包, 依赖的jar包进行重命名 -->
+           <!-- 找不到此插件，先注释掉，作用：将依赖的jar包打包到当前jar包, 依赖的jar包进行重命名
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>

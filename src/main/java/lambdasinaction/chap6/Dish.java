@@ -6,10 +6,10 @@ import static java.util.Arrays.asList;
 
 public class Dish {
 
-    private final String name;
-    private final boolean vegetarian;
-    private final int calories;
-    private final Type type;
+    private final String name; //名称
+    private final boolean vegetarian; //是否素菜
+    private final int calories; //热量
+    private final Type type; //种类
 
     public Dish(String name, boolean vegetarian, int calories, Type type) {
         this.name = name;
@@ -34,6 +34,7 @@ public class Dish {
         return type;
     }
 
+    // TODO 菜的种类枚举
     public enum Type { MEAT, FISH, OTHER }
 
     @Override
@@ -45,12 +46,12 @@ public class Dish {
             asList( new Dish("pork", false, 800, Dish.Type.MEAT),
                     new Dish("beef", false, 700, Dish.Type.MEAT),
                     new Dish("chicken", false, 400, Dish.Type.MEAT),
-                    new Dish("french fries", true, 530, Dish.Type.OTHER),
+                    new Dish("frenchFries", true, 530, Dish.Type.OTHER),//炸薯条
                     new Dish("rice", true, 350, Dish.Type.OTHER),
-                    new Dish("season fruit", true, 120, Dish.Type.OTHER),
+                    new Dish("seasonFruit", true, 120, Dish.Type.OTHER), //时令水果
                     new Dish("pizza", true, 550, Dish.Type.OTHER),
-                    new Dish("prawns", false, 400, Dish.Type.FISH),
-                    new Dish("salmon", false, 450, Dish.Type.FISH));
+                    new Dish("prawns", false, 400, Dish.Type.FISH), //对虾
+                    new Dish("salmon", false, 450, Dish.Type.FISH)); //鲑鱼
 
     public static final Map<String, List<String>> dishTags = new HashMap<>();
 
